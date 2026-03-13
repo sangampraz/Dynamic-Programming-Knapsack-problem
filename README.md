@@ -47,10 +47,8 @@ The algorithm uses bottom-up dynamic programming.
   * for each item and capacity:
   If the item is too heavy: M[i][w] = M[i-1][w]
   Otherwise we choose the better option:
-  M[i][w] = max(
-            M[i-1][w],
-            value_i + M[i-1][w - weight_i]
-          )
+  M[i][w] = max(M[i-1][w], value_i + M[i-1][w - weight_i])
+
 This compares excluding or including the item
 * Step 4: Final solution
 The optimal solution is stored in:  M[n][capacity]
